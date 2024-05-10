@@ -6,31 +6,13 @@
 /*   By: lburkins <lburkins@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 14:50:49 by lburkins          #+#    #+#             */
-/*   Updated: 2024/01/22 12:10:38 by lburkins         ###   ########.fr       */
+/*   Updated: 2024/05/10 14:19:56 by lburkins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <fcntl.h> //included for using the open function.
-
-/*int	main(void)
-{
-	int		fd;
-	char	*line;
-
-	fd = open("tests/hello_no_nl", O_RDONLY);
-	line = get_next_line(fd);
-	printf("%s\n", line);
-	free(line);
-	while (get_next_line(fd))
-	{
-		line = get_next_line(fd);
-		printf("%s\n", line);
-		free(line);
-	}
-	close(fd);
-	return 0;
-}*/
+#include <fcntl.h>
+#include <stdio.h>
 
 int	main(void)
 {
@@ -38,7 +20,6 @@ int	main(void)
 	char	*line;
 
 	fd = open("tests/text_with_lots_of_nls", O_RDONLY);
-	//printf("%d", fd);
 	while (1)
 	{
 		line = get_next_line(fd);
